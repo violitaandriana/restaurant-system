@@ -6,43 +6,13 @@
   font-weight: 400;
 }
 
-.error-alert {
+.alert-msg {
   padding: 0.5rem 0.75rem;
   border-radius: 10px;
-  background-color: #fff2f1;
-  border: 1px solid #ff4849;
+  background-color: rgb(255, 236, 211);
+  border: 1px solid rgb(252, 226, 193);
   display: flex;
   place-items: center;
   gap: 5px;
   font-size: 0.9rem;
-}
-
-.success-alert {
-  padding: 0.5rem 0.75rem;
-  border-radius: 10px;
-  background-color: #f6ffee;
-  border: 1px solid #acfc65;
-  display: flex;
-  place-items: center;
-  gap: 5px;
-  font-size: 0.9rem;
-}
-
-.icon-svg {
-  width: 24px;
-}
-
-.icon-svg-small {
-    width: 18px;
-}
-
-.btn-action {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    gap: 4px;
-    color: white;
-    padding: 0.4rem 0.8rem;
-    border-radius: 10px;
 }

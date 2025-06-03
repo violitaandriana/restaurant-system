@@ -23,11 +23,18 @@
 # php artisan make:model Scrap -m
 # php artisan make:model StockOpname -m
 
-# php artisan make:model Menu -m
-# php artisan make:model Order -m
-# php artisan make:model OrderItem -m
+# php artisan make:model Brand
+# php artisan make:model Customer
+# php artisan make:model Salesman
+# php artisan make:model Rayon
+# php artisan make:model CustTime
+# php artisan make:model SalesOrder
 
-php artisan make:controller AuthController
-php artisan make:controller MenuController
-php artisan make:controller OrderController
-php artisan make:controller DashboardController
+# php artisan make:controller BrandController
+# php artisan make:controller CustomerController
+# php artisan make:controller SalesmanController
+# php artisan make:controller RayonController
+# php artisan make:controller CustTimeController
+# php artisan make:controller SalesOrderController
+php artisan make:controller ReportController
+

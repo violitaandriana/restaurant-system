@@ -1,34 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\MenuController;
-use App\Http\Controllers\OrderController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\RayonController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\SalesmanController;
+use App\Http\Controllers\SalesOrderController;
 
-Route::get('/ping', function () {
-    return response()->json(['pong' => true]);
-});
-Route::get('/test', function() {
-    return response()->json([
-        'status' => 'success',
-        'message' => 'API is working'
-    ]);
-});
-Route::post('/login', [AuthController::class, 'login']);
-Route::post('/register', [AuthController::class, 'register']);
+Route::get('/dashboard', [DashboardController::class, 'index']);
 
-Route::middleware('auth:sanctum')->group(function () {
-    Route::post('/logout', [AuthController::class, 'logout']);
-    Route::get('/user', [AuthController::class, 'user']);
-
-    // Dashboard
-    Route::get('/dashboard', [DashboardController::class, 'index']);
-
-    // Menu Management
-    Route::apiResource('menus', MenuController::class);
-
-    // Order Management
-    Route::apiResource('orders', OrderController::class);
-    Route::patch('/orders/{order}/status', [OrderController::class, 'updateStatus']);
-});
+Route::apiResource('brands', BrandController::class);
+Route::apiResource('customers', CustomerController::class);
+Route::apiResource('salesmen', SalesmanController::class);
+Route::apiResource('rayons', RayonController::class);
+Route::apiResource('sales-orders', SalesOrderController::class);
+Route::get('/reports', [ReportController::class, 'index']);

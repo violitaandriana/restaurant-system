@@ -4,6 +4,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\Cors;
 
 return Application::configure(basePath: dirname(__DIR__))
     // ->withRouting(
@@ -23,8 +24,11 @@ return Application::configure(basePath: dirname(__DIR__))
         }
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->validateCsrfTokens(except: [
+            'api/*', // Exclude all API routes from CSRF
+        ]);
+        $middleware->append(\Illuminate\Http\Middleware\HandleCors::class);
     })
-    ->withExceptions(function (Exceptions $exceptions) {
+    ->withExceptions(function () {
         //
     })->create();

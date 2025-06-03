@@ -1,9 +1,8 @@
-import RestaurantAdmin from "./components/RestaurantAdmin";
-
+import WebAdmin from "./components/WebAdmin";
 
 function App() {
   return (
-    <RestaurantAdmin />
+    <WebAdmin />
   );
 }
 

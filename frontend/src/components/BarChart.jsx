@@ -1,4 +1,3 @@
-// components/BarChart.jsx
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,7 +9,6 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 
-// Register components
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -20,7 +18,7 @@ ChartJS.register(
   Legend
 );
 
-const BarChart = ({titleText, labels, dtLabel, dtData, bgColor}) => {
+const BarChart = ({ titleText, labels, datasets }) => {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -37,13 +35,7 @@ const BarChart = ({titleText, labels, dtLabel, dtData, bgColor}) => {
 
   const data = {
     labels: labels,
-    datasets: [
-      {
-        label: dtLabel,
-        data: dtData,
-        backgroundColor: bgColor,
-      },
-    ],
+    datasets: datasets, 
   };
 
   return <Bar options={options} data={data} />;

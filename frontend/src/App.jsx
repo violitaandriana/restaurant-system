@@ -1,11 +1,10 @@
-import { useState } from 'react'
+import RestaurantAdmin from "./components/RestaurantAdmin";
+
 
 function App() {
   return (
-    <>
-      <h1>Vite + React</h1>
-    </>
-  )
+    <RestaurantAdmin />
+  );
 }
 
-export default App
+export default App;
